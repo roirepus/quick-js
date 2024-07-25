@@ -1,14 +1,89 @@
 <p>rock paper scissors</p>
-<button onclick="
-	if(compChoice==='paper'){alert('you lose')}
-	else if(compChoice==='scissors'){alert('computer chose scissors. you win')}else{alert('tie')}">rock</button>
-<button onclick="if(compChoice==='paper'){alert('tie')}
-	else if(compChoice==='scissors'){alert('computer chose scissors. you lose')}else{alert('tie')}">paper</button>
-<button onckick="if(compChoice==='paper'){alert('you win')}
-	else if(compChoice==='scissors'){alert('tie')}else{alert('you lose')}">scissor</button>
+<button type="" onclick="playGame(0)">rock</button>
+<button type="" onclick="playGame(1)">paper</button>
+<button type="" onclick="playGame(2)">scissors</button>
+<button type="" onclick="reset()">reset</button>
 
 <script>
-	const options = ['rock', 'paper', 'scissors'];
-	const computer = Math.floor(Math.random() * (2 - 0 + 1) + 0);
-	const compChoice = options[computer];
+	var score = {
+
+		wins: 0,
+		loses: 0,
+		tie: 0,
+	}
+
+	function playGame(x) {
+		const options = ['rock', 'paper', 'scissors'];
+		const computer = Math.floor(Math.random() * (2 - 0 + 1) + 0);
+		const compChoice = computer;
+		var result;
+
+		if (x === 0) {
+			switch (compChoice) {
+				case 0:
+					result = "tie";
+					score.tie += 1;
+					break;
+				case 1:
+					result = "defeat"
+					score.loses += 1;
+					break;
+				case 2:
+					result = "victory"
+					score.wins += 1;
+					break;
+			}
+
+		}
+		else if (x === 1) {
+			switch (compChoice) {
+				case 0:
+					result = "victory"
+
+					score.wins += 1;
+					break;
+				case 1:
+					result = "tie";
+					score.tie += 1;
+					break;
+				case 2:
+					result = "defeat"
+					score.loses += 1;
+					break;
+			}
+
+		}
+		else if (x === 2) {
+			switch (compChoice) {
+				case 0:
+
+					result = "defeat"
+					score.loses += 1;
+					break;
+				case 1:
+
+					result = "victory"
+						;
+					score.wins += 1;
+					break;
+				case 2:
+					result = "tie";
+					score.tie += 1;
+					break;
+			}
+
+		}
+
+
+		alert(`iss a ${result} you chose ${options[x]} and the computer chose ${options[compChoice]} \n the current score is: \n\n loses: ${score.loses} \n wins: ${score.wins}\nties: ${score.tie}`)
+	}
+
+
+	function reset() {
+		alert("the scores have been reset");
+		score.wins = 0;
+		score.loses = 0;
+		score.tie = 0;
+	}
+
 </script>
