@@ -1,0 +1,10 @@
+<p>cart quantity</p>
+<button onclick="console.log(`cart qty: ${cartQty}`)">show qty</button>
+<button onclick="console.log(`cart qty: ${++cartQty}`)">add to cart</button>
+<button onclick="console.log(`cart qty:${cartQty+=2}`)">+2</button>
+<button onclick="console.log(`cart qty:${cartQty+=3}`)">+3</button>
+<button onclick="console.log(`cart qty:${cartQty=0}`)">reset cart</button>
+
+<script>
+	let cartQty = 0;
+</script>

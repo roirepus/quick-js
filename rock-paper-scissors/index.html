@@ -1,0 +1,14 @@
+<p>rock paper scissors</p>
+<button onclick="
+	if(compChoice==='paper'){alert('you lose')}
+	else if(compChoice==='scissors'){alert('computer chose scissors. you win')}else{alert('tie')}">rock</button>
+<button onclick="if(compChoice==='paper'){alert('tie')}
+	else if(compChoice==='scissors'){alert('computer chose scissors. you lose')}else{alert('tie')}">paper</button>
+<button onckick="if(compChoice==='paper'){alert('you win')}
+	else if(compChoice==='scissors'){alert('tie')}else{alert('you lose')}">scissor</button>
+
+<script>
+	const options = ['rock', 'paper', 'scissors'];
+	const computer = Math.floor(Math.random() * (2 - 0 + 1) + 0);
+	const compChoice = options[computer];
+</script>
