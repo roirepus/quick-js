@@ -2,15 +2,26 @@
 <button type="" onclick="playGame(0)">rock</button>
 <button type="" onclick="playGame(1)">paper</button>
 <button type="" onclick="playGame(2)">scissors</button>
+<p class="score"></p>
 <button type="" onclick="reset()">reset</button>
 
 <script>
-	var score = {
+	function reset() {
+		<!--alert("the scores have been reset");-->
+		score.wins = 0;
+		score.tie = 0;
+		score.loses = 0;
 
-		wins: 0,
-		loses: 0,
-		tie: 0,
+		localStorage.removeItem('score');
+
 	}
+	let score =
+		JSON.parse((localStorage.getItem('score'))) || {
+			wins: 0,
+			loses: 0,
+			tie: 0,
+		}
+
 
 	function playGame(x) {
 		const options = ['rock', 'paper', 'scissors'];
@@ -75,15 +86,11 @@
 		}
 
 
-		alert(`iss a ${result} you chose ${options[x]} and the computer chose ${options[compChoice]} \n the current score is: \n\n loses: ${score.loses} \n wins: ${score.wins}\nties: ${score.tie}`)
+
+		document.querySelector('.score').innerHTML = `loses: ${score.loses}  wins: ${score.wins}\nties: ${score.tie}`
+
 	}
 
-
-	function reset() {
-		alert("the scores have been reset");
-		score.wins = 0;
-		score.loses = 0;
-		score.tie = 0;
-	}
+	localStorage.setItem('score', JSON.stringify(score));
 
 </script>
