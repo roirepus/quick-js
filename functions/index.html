@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+	<button class="btn">click</button>
+	<script>
+		const btn = document.querySelector(".btn");
+		btn.addEventListener('click', () => {
+			console.log('click')
+		});
+		/*
+		const function1 = function (x) {
+			console.log(x);
+		}
+		function1(4);
+
+		const obj1 = {
+			num: 2,
+			fun: function greeting() {
+				console.log("hello again");
+			}
+		}
+		obj1.fun();
+		
+		setTimeout(function () {
+			console.log("timeout");
+		}, 3000);
+		console.log('next line')
+		setInterval(function () {
+			console.log('interval')
+		}, 3000)
+		*/
+		const arrowFunction = () => {
+			console.log('hemlo');
+		}
+		const obj = {
+			name: 'gun',
+			fun: () => {
+				console.log("shoots")
+			},
+		}
+		obj.fun();
+	</script>
+
+</body>
+
+</html>
